@@ -1,15 +1,16 @@
 push!(LOAD_PATH,"../src/")
-using Documenter, RadarQC
+using Documenter, Ronin
 
-makedocs(sitename="RadarQC.jl",
-        modules= [RadarQC],
+makedocs(sitename="Ronin.jl",
+        modules= [Ronin],
         pages = [
             "Home" => "index.md"
+            "Reference" => "api.md"
         ],
-        format = Documenter.HTML(prettyurls = false))
+        format = Documenter.HTML(prettyurls = false), 
+        checkdocs=:none)
 
 deploydocs(;
-    repo="github.com/irslushy/RadarQC.jl.git",
-    deploy_config="../.github/workflows/Documentation.yml",
+    repo="github.com/irslushy/Ronin.jl.git",
     devbranch="main"
 )
